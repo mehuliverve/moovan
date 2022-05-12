@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+   
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/slick.css">
+
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/font-awesome.min.css">
+       
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/LineIcons.css">
+        
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/animate.css">
+        
+    <!--====== Magnific Popup CSS ======-->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/magnific-popup.css">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/bootstrap.min.css">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css">
+    	<style>
+	.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+	margin-top:10px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #ff3939;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+	</style>
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Muvan</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+
+
+    <!--====== Jquery js ======-->
+    <script src="%PUBLIC_URL%/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    
+    <!--====== Bootstrap js ======-->
+    <script src="%PUBLIC_URL%/assets/js/popper.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/bootstrap.min.js"></script>
+    
+    <!--====== Slick js ======-->
+    <script src="%PUBLIC_URL%/assets/js/slick.min.js"></script>
+    
+    <!--====== Isotope js ======-->
+    <script src="%PUBLIC_URL%/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/isotope.pkgd.min.js"></script>
+    
+    <!--====== Counter Up js ======-->
+    <script src="%PUBLIC_URL%/assets/js/waypoints.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/jquery.counterup.min.js"></script>
+    
+    <!--====== Circles js ======-->
+    <script src="%PUBLIC_URL%/assets/js/circles.min.js"></script>
+    
+    <!--====== Appear js ======-->
+    <script src="%PUBLIC_URL%/assets/js/jquery.appear.min.js"></script>
+    
+    <!--====== WOW js ======-->
+    <script src="%PUBLIC_URL%/assets/js/wow.min.js"></script>
+    
+    <!--====== Headroom js ======-->
+    <script src="%PUBLIC_URL%/assets/js/headroom.min.js"></script>
+    
+    <!--====== Jquery Nav js ======-->
+    <script src="%PUBLIC_URL%/assets/js/jquery.nav.js"></script>
+    
+    <!--====== Scroll It js ======-->
+    <script src="%PUBLIC_URL%/assets/js/scrollIt.min.js"></script>
+    
+    <!--====== Magnific Popup js ======-->
+    <script src="%PUBLIC_URL%/assets/js/jquery.magnific-popup.min.js"></script>
+    
+    <!--====== Main js ======-->
+    <script src="%PUBLIC_URL%/assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+   <script>
+     const ls = localStorage.getItem("selected");
+let selected = false;
+var list = document.querySelectorAll(".list"),
+    content = document.querySelector(".content"),
+    input = document.querySelector(".message-footer input"),
+    open = document.querySelector(".open a");
+
+//init
+function init() {
+  //input.focus();
+  let now = 2;
+  const texts = ["İyi akşamlar", "Merhaba, nasılsın?",
+                "Harikasın! :)", "Günaydın", "Tünaydın",
+                "Hahaha", "Öğlen görüşelim.", "Pekala"];
+  for(var i = 4; i < list.length; i++) {
+    list[i].querySelector(".time").innerText = `${now} day ago`;
+    list[i].querySelector(".text").innerText = texts[(i-4) < texts.length ? (i-4) : Math.floor(Math.random() * texts.length)];
+    now++;
+  }
+}
+init();
+
+//process
+function process() {
+  if(ls != null) {
+    selected = true;
+    click(list[ls], ls);
+  }
+  if(!selected) {
+    click(list[0], 0);
+  }
+
+  list.forEach((l,i) => {
+    l.addEventListener("click", function() {
+      click(l, i);
+    });
+  });
+  
+  try {
+    document.querySelector(".list.active").scrollIntoView(true);
+  }
+  catch {}
+  
+}
+process();
+
+//list click
+function click(l, index) {
+  list.forEach(x => { x.classList.remove("active"); });
+  if(l) {
+    l.classList.add("active");
+    document.querySelector("sidebar").classList.remove("opened");
+    open.innerText="UP";
+    const img = l.querySelector("img").src,
+          user = l.querySelector(".user").innerText,
+          time = l.querySelector(".time").innerText;
+
+    content.querySelector("img").src = img;
+    content.querySelector(".info .user").innerHTML = user;
+    content.querySelector(".info .time").innerHTML = time;
+
+    const inputPH = input.getAttribute("data-placeholder");
+    input.placeholder = inputPH.replace("{0}", user.split(' ')[0]);
+
+    document.querySelector(".message-wrap").scrollTop = document.querySelector(".message-wrap").scrollHeight;
+    
+    localStorage.setItem("selected", index);
+  }
+}
+
+open.addEventListener("click", (e) => {
+  const sidebar = document.querySelector("sidebar");
+  sidebar.classList.toggle("opened");
+  if(sidebar.classList.value == 'opened')
+    e.target.innerText = "DOWN";
+  else
+    e.target.innerText = "UP";
+});
+   </script>
+   <script>
+     jQuery(document).ready(function () {
+  ImgUpload();
+});
+
+function ImgUpload() {
+  var imgWrap = "";
+  var imgArray = [];
+
+  $('.upload__inputfile').each(function () {
+    $(this).on('change', function (e) {
+      imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
+      var maxLength = $(this).attr('data-max_length');
+
+      var files = e.target.files;
+      var filesArr = Array.prototype.slice.call(files);
+      var iterator = 0;
+      filesArr.forEach(function (f, index) {
+
+        if (!f.type.match('image.*')) {
+          return;
+        }
+
+        if (imgArray.length > maxLength) {
+          return false
+        } else {
+          var len = 0;
+          for (var i = 0; i < imgArray.length; i++) {
+            if (imgArray[i] !== undefined) {
+              len++;
+            }
+          }
+          if (len > maxLength) {
+            return false;
+          } else {
+            imgArray.push(f);
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              var html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
+              imgWrap.append(html);
+              iterator++;
+            }
+            reader.readAsDataURL(f);
+          }
+        }
+      });
+    });
+  });
+
+  $('body').on('click', ".upload__img-close", function (e) {
+    var file = $(this).parent().data("file");
+    for (var i = 0; i < imgArray.length; i++) {
+      if (imgArray[i].name === file) {
+        imgArray.splice(i, 1);
+        break;
+      }
+    }
+    $(this).parent().parent().remove();
+  });
+}
+   </script>
+  </body>
+</html>

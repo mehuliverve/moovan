@@ -1,0 +1,36 @@
+.three-column-images
+{
+  background:white;
+}
+
+.three-column-images .row
+{
+  text-align:center;
+}
+.three-column-images img
+{
+  margin-bottom:10px;
+  margin-top:20px;
+}
+
+.three-column-images a
+{
+  font-weight:bolder;
+  color:black;
+
+}
+
+
+
+.hov:hover .edit {
+	display: block;
+}
+
+.edit {
+	padding-top:20%;	
+	padding-right: 40%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
+}
